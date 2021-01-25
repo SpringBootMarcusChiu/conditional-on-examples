@@ -1,4 +1,4 @@
-package com.marcuschiu.conditionalonpropertyexample.config;
+package com.marcuschiu.conditionalonpropertyexample.config.clazz;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
@@ -12,15 +12,15 @@ public class ConditionalOnClassConfig {
 
     @Bean
     @ConditionalOnClass(DataSource.class)
-    public String conditionalOnClassConfigA1() {
+    public String methodConditionalOnClassConfig1() {
         System.out.println("inside - @ConditionalOnClass(DataSource.class)");
-        return "conditionalOnClassConfigA1";
+        return "methodConditionalOnClassConfig1";
     }
 
     @Bean
     @ConditionalOnMissingClass("org.springframework.data.redis.core.RedisTemplate")
-    public String conditionalOnClassConfigA2() {
+    public String conditionalOnClassConfig2() {
         System.out.println("inside - @ConditionalOnMissingClass(\"org.springframework.data.redis.core.RedisTemplate\")");
-        return "conditionalOnClassConfigA2";
+        return "methodConditionalOnClassConfig2";
     }
 }
