@@ -2,10 +2,7 @@ package com.marcuschiu.conditionalonpropertyexample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 public class ConditionalOnPropertyExampleApplication {
@@ -21,7 +18,7 @@ public class ConditionalOnPropertyExampleApplication {
 		String[] allBeanNames = applicationContext.getBeanDefinitionNames();
 		System.out.println("\nList of Method Beans");
 		for(String beanName : allBeanNames) {
-			if (beanName.contains("methodConditionalOn")) {
+			if (beanName.contains("method")) {
 				System.out.println(beanName);
 			}
 		}

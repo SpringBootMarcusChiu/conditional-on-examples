@@ -1,4 +1,4 @@
-package com.marcuschiu.conditionalonpropertyexample.config.property;
+package com.marcuschiu.conditionalonpropertyexample.config.conditional.on.property;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;

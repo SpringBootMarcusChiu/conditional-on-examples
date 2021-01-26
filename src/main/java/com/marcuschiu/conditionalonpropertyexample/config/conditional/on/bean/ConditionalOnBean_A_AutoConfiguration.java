@@ -1,4 +1,4 @@
-package com.marcuschiu.conditionalonpropertyexample.config.bean;
+package com.marcuschiu.conditionalonpropertyexample.config.conditional.on.bean;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -8,17 +8,18 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-public class ConditionalOnBeanConfigB {
+//@ConditionalOnBean(name = "methodConditionalOnClassConfig1")
+public class ConditionalOnBean_A_AutoConfiguration {
 
     /**
      * bean created if another bean with name `methodConditionalOnBeanConfig1` exists
-     * TODO for some reason this gets created even though in ConditionalOnBeanConfigB doesn't
+     * TODO this is not created but in ConditionalOnBeanConfigA does...
      */
     @Bean
     @ConditionalOnBean
     public String methodConditionalOnBeanConfig1() {
-        System.out.println("inside - @ConditionalOnBean - ConditionalOnBeanConfigB.methodConditionalOnBeanConfig1()");
-        return "ConditionalOnBeanConfigB.methodConditionalOnBeanConfig1";
+        System.out.println("inside - @ConditionalOnBean - ConditionalOnBeanConfigA.methodConditionalOnBeanConfig1()");
+        return "ConditionalOnBeanConfigA.methodConditionalOnBeanConfig1";
     }
 
     /**
@@ -26,7 +27,7 @@ public class ConditionalOnBeanConfigB {
      */
     @Bean
     @ConditionalOnBean(name = "methodConditionalOnBeanConfig1")
-    public String methodConditionalOnBeanConfig2b() {
+    public String methodConditionalOnBeanConfig2() {
         System.out.println("inside - @ConditionalOnBean - ConditionalOnBeanConfigA.methodConditionalOnBeanConfig2()");
         return "ConditionalOnBeanConfigA.methodConditionalOnBeanConfig2";
     }
@@ -37,8 +38,8 @@ public class ConditionalOnBeanConfigB {
     @Bean
     @ConditionalOnMissingBean
     public String methodConditionalOnMissingBeanConfig1() {
-        System.out.println("inside - @ConditionalOnMissingBean - ConditionalOnBeanConfigB.methodConditionalOnMissingBeanConfig1()");
-        return "ConditionalOnBeanConfigB.methodConditionalOnMissingBeanConfig1";
+        System.out.println("inside - @ConditionalOnMissingBean - ConditionalOnBeanConfigA.methodConditionalOnMissingBeanConfig1()");
+        return "ConditionalOnBeanConfigA.methodConditionalOnMissingBeanConfig1";
     }
 
     /**
@@ -46,8 +47,8 @@ public class ConditionalOnBeanConfigB {
      */
     @Bean
     @ConditionalOnMissingBean(DataSource.class)
-    public String methodConditionalOnMissingBeanConfig2b() {
-        System.out.println("inside - @ConditionalOnMissingBean(DataSource.class) - ConditionalOnBeanConfigB.methodConditionalOnMissingBeanConfig2b()");
-        return "ConditionalOnBeanConfigB.methodConditionalOnMissingBeanConfig2b";
+    public String methodConditionalOnMissingBeanConfig2() {
+        System.out.println("inside - @ConditionalOnMissingBean(DataSource.class) - ConditionalOnBeanConfigA.methodConditionalOnMissingBeanConfig2()");
+        return "ConditionalOnBeanConfigA.methodConditionalOnMissingBeanConfig2";
     }
 }

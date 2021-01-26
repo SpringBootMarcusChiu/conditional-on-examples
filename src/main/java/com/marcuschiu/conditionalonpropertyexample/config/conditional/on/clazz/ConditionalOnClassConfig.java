@@ -1,4 +1,4 @@
-package com.marcuschiu.conditionalonpropertyexample.config.clazz;
+package com.marcuschiu.conditionalonpropertyexample.config.conditional.on.clazz;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
@@ -13,7 +13,7 @@ public class ConditionalOnClassConfig {
     @Bean
     @ConditionalOnClass(DataSource.class)
     public String methodConditionalOnClassConfig1() {
-        System.out.println("inside - @ConditionalOnClass(DataSource.class)");
+        System.out.println("inside - @ConditionalOnClass(DataSource.class) - ConditionalOnClassConfig.methodConditionalOnClassConfig1()");
         return "methodConditionalOnClassConfig1";
     }
 
